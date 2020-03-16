@@ -27,9 +27,11 @@ class UrnaDao extends DB
             $stmt->bindValue(1, $votes['qtd_votes']);
             $stmt->bindValue(2, $votes['chapa']);
             $stmt->execute();
-            return $stmt;
+            return true;
+            
         } catch (Exception $ex) {
             $ex->getMessage();
+            return false;
         }
     }
 
